@@ -1,0 +1,101 @@
+.cardContainer {
+  width: 100%;
+  position: relative;
+
+}
+.c {
+  width: 100%;
+  height: 100%;
+
+  color: black;
+}
+.front, .back {
+  position: relative;
+}
+.front {
+  height: 20vh;
+  transition: height .5s;
+}
+.back {
+  height: 20vh;
+}
+.frontContainer {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+    segoe ui, arial, sans-serif; 
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.frontDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.frontDate > h2 {
+  font-weight: normal;
+  font-size: .8rem;
+}
+.frontDate h3 {
+  font-size: .8rem;
+  font-weight: normal;
+}
+.blackCircle {
+  font-size: .3rem;
+  margin-left: .2rem;
+  margin-right: .2rem
+}
+.cardTitle {
+  font-weight: normal;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+.cardLocation {
+  display: flex;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  border: none;
+}
+.addressIcon {
+  height: 1.5rem;
+  width: auto;
+}
+.cardDescription {
+  margin-top: 1rem;
+  transition: opacity .5s;
+}
+.expandToggle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: .2rem;
+  margin-right: .5rem;
+  background-color: transparent;
+  border: none;
+}
+.expandIcon {
+  height: 1.7rem;
+  width: auto;
+  transform: rotate(90deg)
+}
+.addCalendar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border: none;
+}
+.calendarIcon {
+  height: 1rem;
+  width: auto;
+}

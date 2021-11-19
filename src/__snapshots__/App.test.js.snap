@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders a App by default 1`] = `
+<AuthProvider>
+  <div
+    className="App"
+  >
+    <BrowserRouter>
+      <Route
+        exact={true}
+        path="/jubo/:jubo"
+      >
+        <Jubo />
+      </Route>
+      <div
+        className="adminWrapper"
+      >
+        <div
+          className="adminContainer"
+        >
+          <Route
+            key="/admin/:userid"
+            path="/admin/:userid"
+          >
+            <AdminHeader />
+          </Route>
+          <Route
+            key="/admin/:userid/account"
+            path="/admin/:userid/account"
+          >
+            <AdminHeader />
+          </Route>
+          <Route
+            key="/admin/:userid/event/:eventid"
+            path="/admin/:userid/event/:eventid"
+          >
+            <AdminHeader />
+          </Route>
+          <Route
+            key="/admin/:userid/event/:eventid/program"
+            path="/admin/:userid/event/:eventid/program"
+          >
+            <AdminHeader />
+          </Route>
+          <Route
+            key="/admin/:userid/event/:eventid/contact"
+            path="/admin/:userid/event/:eventid/contact"
+          >
+            <AdminHeader />
+          </Route>
+          <Route
+            key="/admin/:userid/event/:eventid/announcements"
+            path="/admin/:userid/event/:eventid/announcements"
+          >
+            <AdminHeader />
+          </Route>
+          <Route
+            exact={true}
+            path="/"
+          >
+            <Welcome />
+          </Route>
+          <Route
+            path="/login"
+          >
+            <Login />
+          </Route>
+          <Route
+            path="/signup"
+          >
+            <SignUp />
+          </Route>
+          <PrivateRoute
+            component={[Function]}
+            exact={true}
+            path="/admin/:userid"
+          />
+          <PrivateRoute
+            component={[Function]}
+            path="/admin/:userid/account"
+          />
+          <PrivateRoute
+            component={[Function]}
+            exact={true}
+            path="/admin/:userid/event/:eventid"
+          />
+          <PrivateRoute
+            component={[Function]}
+            path="/admin/:userid/event/:eventid/program"
+          />
+          <PrivateRoute
+            component={[Function]}
+            exact={true}
+            path="/admin/:userid/event/:eventid/announcements"
+          />
+          <PrivateRoute
+            component={[Function]}
+            path="/admin/:userid/event/:eventid/contact"
+          />
+        </div>
+      </div>
+    </BrowserRouter>
+  </div>
+</AuthProvider>
+`;

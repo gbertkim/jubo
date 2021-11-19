@@ -1,0 +1,49 @@
+
+.Announcements {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(247, 247, 247);
+}
+.titles {
+  font-size: 1.7rem;
+  font-weight: normal;
+  font-style: italic; 
+  color: black;
+  color: rgb(71, 71, 71);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.headContainer {
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: .5rem;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+  0 2px 2px rgba(0,0,0,0.05), 
+  0 4px 4px rgba(0,0,0,0.05), 
+  0 8px 8px rgba(0,0,0,0.05),
+  0 16px 16px rgba(0,0,0,0.05);
+}
+.headContainer>div {
+  color: rgb(68, 68, 68);
+}
+
+.AnnouncementsContainer {
+  width: 100%;
+}
+
+.cardScaler {
+  width: 100%;
+  height: 30vh;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+

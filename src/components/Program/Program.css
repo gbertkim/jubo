@@ -1,0 +1,59 @@
+.Program {
+    background-color: rgb(247, 247, 247);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+    justify-content: center;
+}
+.Program ul {
+    list-style: none;
+}
+.Program li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 1.3rem;
+}
+.Program h2 {
+    padding-bottom: 3px;
+    font-size: 2rem;
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.Program li h3 {
+    font-size: 1.3rem;
+    font-family: 'EB Garamond', serif;
+    font-weight: normal;
+}
+.Program li p {
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+.listWrapper {
+    display: flex;
+    flex-direction: row;
+}
+.listWrapper p {
+    margin-right: .2rem;
+}
+.light {
+    font-weight: 300;
+}
+.giveButton {
+    color: black;
+    padding: 8px;
+    border: 1.4px solid rgb(82, 82, 82);
+    border-radius: 3px;
+    text-decoration: none;
+    margin-top: .2rem;
+    -webkit-box-shadow: 0 3px 8px -6px rgb(94, 94, 94);
+    -moz-box-shadow: 0 3px 8px -6px rgb(94, 94, 94);
+         box-shadow: 0 3px 8px -6px rgb(94, 94, 94);
+  
+  }

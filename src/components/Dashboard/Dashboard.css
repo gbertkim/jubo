@@ -1,0 +1,173 @@
+
+.Dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 15vh 0rem 0 0rem;
+    flex-direction: column;
+    background-color: white;
+    overflow: hidden;
+}
+.dashboardWrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10rem;
+    background-color: white;
+    padding-left: 1rem;
+    height: 100%;
+    overflow-y: scroll;
+}
+.juboName {
+    display: inline-block;
+    font-weight: normal;
+    width: 5rem;
+    font-size: .9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: rgb(77, 77, 77);
+    margin-top: .3rem;
+    margin-bottom: .5rem;
+}
+.titleContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+.normalWeight {
+    font-weight: normal;
+    margin-left: .2rem;
+}
+.isActiveDesc {
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: .8rem;
+    margin: .3rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.iconGreen {
+    height: .6rem;
+    margin-right: .3rem;
+}
+.pageTitle {
+    font-size: 1.8rem;
+    padding-left: .8rem;
+    margin: 0;
+}
+.eventList {
+    border-bottom: 1px solid rgb(233, 233, 233);
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+}
+.buttonWrapper {
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.03), 
+    0 -2px 2px rgba(0,0,0,0.03), 
+    0 -4px 4px rgba(0,0,0,0.03), 
+    0 -8px 8px rgba(0,0,0,0.03),
+    0 -16px 16px rgba(0,0,0,0.03);
+    z-index: 25;
+    background-color: white;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+    transition: transform .2s;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+.buttonContainer {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.eventsButton {
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    font-size: 1rem;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+.cancelButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: transparent;
+    margin-top: .5rem;
+    margin-right: .5rem;
+}
+.iconAdd {
+    margin: 1.5rem;
+    height: 3rem;
+}
+.dotsButton {
+    border: none;
+    background-color: transparent;
+    padding: .5rem 1.5rem .5rem 2rem;
+}
+.iconDots {
+    height: 1rem;
+    width: auto;
+}
+.overlay{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(145, 145, 145, 0.747);
+    z-index: 20;
+    transition: opacity .5s;
+}
+.isLive {
+    display: inline-block;
+    margin-left: 8rem;
+    color: white;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: rgb(57, 221, 57);
+    font-style: 14px;
+    font-style: italic;
+}
+.eventDateSmall {
+    font-size: 10px;
+    color: grey;
+    margin-top: 5px;
+    font-weight: normal;
+}
+.nameDate {
+    display: flex;
+    flex-direction: column;
+}
+.nameDate > h3 {
+    font-weight: normal;
+}
+#deleteButton {
+    border-bottom: none;
+    color: red;
+}
+.createButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+    margin: 0;
+    background-color: transparent;
+}

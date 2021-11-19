@@ -1,0 +1,30 @@
+.Connect {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(241, 241, 241);
+    padding: 1rem;
+}
+.connectDesc {
+    line-height: 1.5rem;
+}
+.contactInfo {
+    list-style: none;
+    margin-top: 2rem;
+}
+.connectList {
+    font-size: .9rem;
+    list-style: none;
+    font-weight: bold;
+    margin-top: .5rem;
+}
+.staffContainer {
+    margin-top: 2rem;
+}
+.staffList {
+    margin-top: .7rem;
+    list-style: none;
+}
+.staffName {
+    font-weight: bold;
+    margin-bottom: .3rem
+}
