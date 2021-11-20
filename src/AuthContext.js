@@ -143,7 +143,6 @@ export function AuthProvider({ children }) {
     const updateValue = {
         updateLogged, updateCurrentUser, updateJuboName
     }
-
     return (
         <AuthContext.Provider value = { value }>
             <AuthUpdateContext.Provider value = { updateValue }>

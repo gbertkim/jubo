@@ -26,7 +26,6 @@ const Dashboard = () => {
     const [tab, setTab] = useState(-1)
     const [eventName, setEventName] = useState('');
     const [eventDate, setEventDate] = useState('');
-
     useEffect(() => {
         async function fetchData() {
             try {
@@ -43,7 +42,6 @@ const Dashboard = () => {
         }
         fetchData()
     },[selected, user_identifier])
-
     const eventSorter = (array) => {
         array.sort((a,b) => {
             let aDate = new Date(a.event_date)
@@ -56,7 +54,6 @@ const Dashboard = () => {
         });   
         setEvents(array)
     }
-
     const deleteFetch = async (id) => {
         try {
             const res = await fetch(`${config.API_ENDPOINT}/events/${user_identifier}/${id}`, {
@@ -171,7 +168,6 @@ const Dashboard = () => {
     return (
         userid === JSON.parse(currentUser) ?
         <div className='Dashboard'>
-
             <div className='dashboardContainer'>
                 <div className='titleContainer'>
                     <h2 className='pageTitle'>My Jubos</h2>
@@ -250,7 +246,8 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className='overlay' onClick={ handleClose } style={{ transform: translateX, opacity: opacity }}></div>
-        </div> : <Redirect to='/login' />
+        </div> 
+        : <Redirect to='/login' />
     )
 }
 

@@ -43,9 +43,9 @@ const SignUp = (props) => {
             })
             if (!res.ok) throw await res.json();
             const response = await res.json() 
-            updateLogged(true)
-            updateJuboName(response.user_name)
-            updateCurrentUser(response.user_identifier)
+            await updateCurrentUser(response.user_identifier)
+            await updateJuboName(response.user_name)
+            await updateLogged(true)
             history.push(`/admin/${response.user_identifier}`)
         } catch(e) {
             console.log(e.error)

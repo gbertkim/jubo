@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
@@ -9,28 +9,12 @@ import EventPage from './components/EventPage/EventPage';
 import ProgramForm from './components/ProgramForm/ProgramForm';
 import AnnouncementPage from './components/AnnouncementPage/AnnouncementPage';
 import ContactForm from './components/ContactForm/ContactForm';
-import config from './components/config.js';
 import Jubo from './components/Jubo/Jubo';
 import AdminHeader from './components/AdminHeader/AdminHeader';
 import Account from './components/Account/Account';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Welcome from './components/Welcome/Welcome';
 function App() {
-  useEffect(() => {
-    fetch(`${config.API_ENDPOINT}/accounts`)
-    .then(res => {
-        if (!res.ok)
-            return res.json().then(e => Promise.reject(e))
-        return res.json()
-    })
-    .then(names => {
-        console.log(names)
-    })
-    .catch(e => {
-        console.log(e)
-    }
-    )
-  },[])
   return (
     <AuthProvider>
       <div className="App">

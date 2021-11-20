@@ -12,6 +12,7 @@ const Login = () => {
     const user_identifier = sessionStorage.getItem('currentUser')
     const logged = sessionStorage.getItem('logged')
     const { updateLogged, updateCurrentUser, updateJuboName } = useUpdateAuth();
+
     async function handleSubmit(e) {
         e.preventDefault();
         const user = userRef.current.value
@@ -36,14 +37,14 @@ const Login = () => {
                     body: JSON.stringify(existingAccount),
             })
             if (!res.ok) throw await res.json();
-            const response = await res.json() 
-            updateLogged(true)
-            updateCurrentUser(response.user_identifier)
-            updateJuboName(response.user_name)
-            history.push(`/admin/${response.user_identifier}`)
+            const response = await res.json()
+            await updateCurrentUser(response.user_identifier)
+            await updateJuboName(response.user_name)
+            await updateLogged(true)
+            await history.push(`/admin/${response.user_identifier}`)
         } catch(e) {
             console.log(e)
-            setError(e.error.message)
+            setError(e)
         }
     }
     return (
