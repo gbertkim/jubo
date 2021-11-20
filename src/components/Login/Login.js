@@ -44,7 +44,7 @@ const Login = () => {
             await history.push(`/admin/${response.user_identifier}`)
         } catch(e) {
             console.log(e)
-            setError(e)
+            setError(e.error.message)
         }
     }
     return (
