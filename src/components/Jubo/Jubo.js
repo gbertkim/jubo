@@ -145,7 +145,7 @@ export default function Jubo() {
   const index = useRef(0)
   const [props, set] = useSprings(pages.length, (i) => ({
     x: i * pageWidth,
-    scale: .95,
+    scale: .90,
     display: 'block'
   }))
   const bind = useDrag(({ active, movement: [mx], direction: [xDir], distance, cancel }) => {
@@ -154,7 +154,7 @@ export default function Jubo() {
     set((i) => {
       if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
       const x = (i - index.current) * pageWidth + (active ? mx : 0)
-      const scale = active ? .95 - distance / pageWidth / 2 : .95
+      const scale = active ? .90 - distance / pageWidth / 2 : .90
       return { x, scale, display: 'block' }
     })
   }, 

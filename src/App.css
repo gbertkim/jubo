@@ -80,3 +80,14 @@ button:hover {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  body, html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 400px) {
+  body, html {
+    font-size: 14px;
+  }
+}
