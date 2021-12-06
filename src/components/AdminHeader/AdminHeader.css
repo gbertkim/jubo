@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid rgb(175, 175, 175);
+    z-index: 2;
 }
 .juboLogo {
     font-size: 1.8rem;
@@ -90,8 +91,7 @@
     background-color: black;
     display: block;
     border: none;
-    font-size: 1rem;
-    margin-bottom: 3rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
 }
 #logOutWrapper {
@@ -100,4 +100,5 @@
     justify-content: center;
     position: absolute;
     bottom: 0;
+    margin-bottom: 6.2rem;
 }

@@ -55,14 +55,14 @@ export default function Password(props) {
                 <fieldset className='admin-fieldset'>
                     <legend className='formTitle'>Change Password</legend>
                     <div className='field logUsernameInput'>
-                        <label className='fieldTitle' htmlFor='email-input'>
-                            E-mail
+                        <label className='fieldTitle' htmlFor='Username-input'>
+                            Username
                         </label>
                         <input
                             className='fieldInput'
                             type='text' 
-                            name='email-input'
-                            aria-label='email input'
+                            name='Username-input'
+                            aria-label='Username input'
                             aria-required='true'
                             ref={userRef}
                         />
@@ -82,13 +82,13 @@ export default function Password(props) {
                     </div>
                     <div className='field logPasswordInput'>
                         <label className='fieldTitle' htmlFor='new-password-input'>
-                            Password
+                            New Password
                         </label>
                         <input
                             className='fieldInput'
                             type='password' 
-                            name='accountPasswordInput'
-                            aria-label='Password input'
+                            name='new-password-input'
+                            aria-label='New Password input'
                             aria-required='true'
                             ref={passwordRef}
                         />
@@ -100,8 +100,8 @@ export default function Password(props) {
                         <input
                             className='fieldInput'
                             type='password' 
-                            name='accountPasswordInput'
-                            aria-label='Password input'
+                            name='check-password-input'
+                            aria-label='Check Password input'
                             aria-required='true'
                             ref={confPasswordRef}
                         />

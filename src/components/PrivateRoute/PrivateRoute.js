@@ -6,7 +6,11 @@ const PrivateRoute = ({component: Component, ...rest}) => {
     return (
         <Route {...rest} render={props => (
             // logged === 'true' ?
-                <Component {...props} />
+            <div className='adminWrapper'>
+                <div className='adminContainer'>
+                    <Component {...props} />
+                </div>
+            </div>
             // : <Redirect to="/login" />
         )} />
     );

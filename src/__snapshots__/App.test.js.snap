@@ -12,93 +12,111 @@ exports[`App renders a App by default 1`] = `
       >
         <Jubo />
       </Route>
-      <div
-        className="adminWrapper"
+      <Route
+        key="/admin/:userid"
+        path="/admin/:userid"
+      >
+        <AdminHeader />
+      </Route>
+      <Route
+        key="/admin/:userid/account"
+        path="/admin/:userid/account"
+      >
+        <AdminHeader />
+      </Route>
+      <Route
+        key="/admin/:userid/event/:eventid"
+        path="/admin/:userid/event/:eventid"
+      >
+        <AdminHeader />
+      </Route>
+      <Route
+        key="/admin/:userid/event/:eventid/program"
+        path="/admin/:userid/event/:eventid/program"
+      >
+        <AdminHeader />
+      </Route>
+      <Route
+        key="/admin/:userid/event/:eventid/contact"
+        path="/admin/:userid/event/:eventid/contact"
+      >
+        <AdminHeader />
+      </Route>
+      <Route
+        key="/admin/:userid/event/:eventid/announcements"
+        path="/admin/:userid/event/:eventid/announcements"
+      >
+        <AdminHeader />
+      </Route>
+      <Route
+        exact={true}
+        path="/"
       >
         <div
-          className="adminContainer"
+          className="adminWrapper"
         >
-          <Route
-            key="/admin/:userid"
-            path="/admin/:userid"
-          >
-            <AdminHeader />
-          </Route>
-          <Route
-            key="/admin/:userid/account"
-            path="/admin/:userid/account"
-          >
-            <AdminHeader />
-          </Route>
-          <Route
-            key="/admin/:userid/event/:eventid"
-            path="/admin/:userid/event/:eventid"
-          >
-            <AdminHeader />
-          </Route>
-          <Route
-            key="/admin/:userid/event/:eventid/program"
-            path="/admin/:userid/event/:eventid/program"
-          >
-            <AdminHeader />
-          </Route>
-          <Route
-            key="/admin/:userid/event/:eventid/contact"
-            path="/admin/:userid/event/:eventid/contact"
-          >
-            <AdminHeader />
-          </Route>
-          <Route
-            key="/admin/:userid/event/:eventid/announcements"
-            path="/admin/:userid/event/:eventid/announcements"
-          >
-            <AdminHeader />
-          </Route>
-          <Route
-            exact={true}
-            path="/"
+          <div
+            className="adminContainer"
           >
             <Welcome />
-          </Route>
-          <Route
-            path="/login"
+          </div>
+        </div>
+      </Route>
+      <Route
+        exact={true}
+        path="/login"
+      >
+        <div
+          className="adminWrapper"
+        >
+          <div
+            className="adminContainer"
           >
             <Login />
-          </Route>
-          <Route
-            path="/signup"
+          </div>
+        </div>
+      </Route>
+      <Route
+        exact={true}
+        path="/signup"
+      >
+        <div
+          className="adminWrapper"
+        >
+          <div
+            className="adminContainer"
           >
             <SignUp />
-          </Route>
-          <PrivateRoute
-            component={[Function]}
-            exact={true}
-            path="/admin/:userid"
-          />
-          <PrivateRoute
-            component={[Function]}
-            path="/admin/:userid/account"
-          />
-          <PrivateRoute
-            component={[Function]}
-            exact={true}
-            path="/admin/:userid/event/:eventid"
-          />
-          <PrivateRoute
-            component={[Function]}
-            path="/admin/:userid/event/:eventid/program"
-          />
-          <PrivateRoute
-            component={[Function]}
-            exact={true}
-            path="/admin/:userid/event/:eventid/announcements"
-          />
-          <PrivateRoute
-            component={[Function]}
-            path="/admin/:userid/event/:eventid/contact"
-          />
+          </div>
         </div>
-      </div>
+      </Route>
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        path="/admin/:userid"
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/admin/:userid/account"
+      />
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        path="/admin/:userid/event/:eventid"
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/admin/:userid/event/:eventid/program"
+      />
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        path="/admin/:userid/event/:eventid/announcements"
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/admin/:userid/event/:eventid/contact"
+      />
     </BrowserRouter>
   </div>
 </AuthProvider>

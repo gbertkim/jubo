@@ -22,23 +22,33 @@ function App() {
           <Route path='/jubo/:jubo' exact>
             <Jubo></Jubo>
           </Route>
-          <div className='adminWrapper'>
-            <div className='adminContainer'>
               {['/admin/:userid', '/admin/:userid/account', '/admin/:userid/event/:eventid', '/admin/:userid/event/:eventid/program', '/admin/:userid/event/:eventid/contact', '/admin/:userid/event/:eventid/announcements'].map(path => {
                 return(
-                  <Route key={path} path={path}>
-                    <AdminHeader />
-                  </Route>
+                    <Route key={path} path={path}>
+                      <AdminHeader />
+                    </Route>
                 )
               })}
               <Route path='/' exact>
-                <Welcome/>
+                <div className='adminWrapper'>
+                  <div className='adminContainer'>
+                    <Welcome/>
+                  </div>
+                </div>
               </Route>
-              <Route path='/login'>
-                <Login/>
+              <Route path='/login' exact>
+                <div className='adminWrapper'>
+                  <div className='adminContainer'>
+                    <Login/>
+                  </div>
+                </div>
               </Route>
-              <Route path='/signup'>
-                <SignUp/>
+              <Route path='/signup' exact>
+                <div className='adminWrapper'>
+                  <div className='adminContainer'>
+                    <SignUp/>
+                  </div>
+                </div>
               </Route>
               <PrivateRoute component={Dashboard} path='/admin/:userid' exact/>
               <PrivateRoute component={Account} path='/admin/:userid/account'/>
@@ -46,8 +56,7 @@ function App() {
               <PrivateRoute component={ProgramForm} path='/admin/:userid/event/:eventid/program' />
               <PrivateRoute component={AnnouncementPage} path='/admin/:userid/event/:eventid/announcements' exact/>
               <PrivateRoute component={ContactForm} path='/admin/:userid/event/:eventid/contact'/>
-            </div>
-          </div>
+
         </Router>
       </div>
     </AuthProvider>
