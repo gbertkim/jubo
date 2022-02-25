@@ -10,7 +10,7 @@ const Program = (props) => {
     return (
         <div className='Program'>
             {info === true ? <WorshipInfo worshipOrder={props.worshipOrder} infoHandler={infoHandler}/> : <></>}
-            <button className='toolTip' onClick={infoHandler}><img src={information} style={{filter : info===true ? "invert(100%)" : ""}}/></button> 
+            <button className='toolTip' onClick={infoHandler}><img src={information} alt='information icon' style={{filter : info===true ? "invert(100%)" : ""}}/></button> 
             <div>{info}</div>
             <h2>Worship Order</h2>
             <ul>
