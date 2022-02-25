@@ -1,9 +1,17 @@
-import React from 'react'
-import  './Program.css';
-
+import React, { useState } from 'react'
+import  './Program.css'
+import information from '../../img/info-icon.png'
+import WorshipInfo from '../WorshipInfo/WorshipInfo'
 const Program = (props) => {
+    const [info, setInfo] = useState(false);
+    const infoHandler = () => {
+        setInfo(!info)
+    }
     return (
         <div className='Program'>
+            {info === true ? <WorshipInfo worshipOrder={props.worshipOrder} infoHandler={infoHandler}/> : <></>}
+            <button className='toolTip' onClick={infoHandler}><img src={information} style={{filter : info===true ? "invert(100%)" : ""}}/></button> 
+            <div>{info}</div>
             <h2>Worship Order</h2>
             <ul>
             { Object.entries(props.worshipDetails).map(([key, value], i) => {

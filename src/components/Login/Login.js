@@ -51,7 +51,7 @@ const Login = () => {
         JSON.parse(logged) === true ? <Redirect to={`/admin/${JSON.parse(user_identifier)}`}/> : 
         <div className="Admin">
             <TitleHeader />
-            <form onSubmit={handleSubmit} className='forms'>
+            <form onSubmit={handleSubmit} className='forms' data-testid='formId'>
                 <fieldset className='admin-fieldset'>
                     <legend className='formTitle'>Log in</legend>
                     <div className='field logUsernameInput'>
@@ -66,6 +66,7 @@ const Login = () => {
                             aria-required='true'
                             ref={userRef}
                             autoComplete="on"
+                            data-testid='usernameId'
                         />
                     </div>
                     <div className='field logPasswordInput'>
@@ -80,9 +81,10 @@ const Login = () => {
                             aria-required='true'
                             ref={passwordRef}
                             autoComplete="on"
+                            data-testid='passwordId'
                         />
                     </div>
-                    {error && <div className='errorNote'>{error}</div>}
+                    {error && <div className='errorNote' data-testid='errorDiv'>{error}</div>}
                     <button type="submit" className="button checkUserButton">
                         Log In
                     </button>

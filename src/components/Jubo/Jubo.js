@@ -8,14 +8,16 @@ import Announcements from '../Announcements/Announcements';
 import Connect from '../Connect/Connect';
 import config from '../config.js'
 import { useParams } from 'react-router-dom'
-
+import Loading from '../Loading/Loading'
 export default function Jubo() {
   const { jubo } = useParams();
   const [name, setName] = useState('');
   const [logoLink, setLink] = useState('');
   const [date, setDate] = useState('');
-  const aWrapperRef = useRef(null)
-  const [pageWidth, setPageWidth] = useState(window.innerWidth);
+  const aWrapperRef = useRef('')
+  const [pageWidth, setPageWidth] = useState(window.innerWidth)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
   const [worshipOrder, setWorshipOrder] = useState({
     'Call to Worship': '',  
     'Worship in Song': '',
@@ -53,26 +55,24 @@ export default function Jubo() {
     Website: '',
     People: []
   });
-
-
- 
-
-
   useEffect(() => {
     async function fetchAllData() {
       try {
+          setLoading(true)
+          setError(false)
           const accountResponse = await fetch(`${config.API_ENDPOINT}/accounts/check/${jubo}`)
           const identifier = await accountResponse.json();
           console.log(identifier)
           const eventsResponse = await fetch(`${config.API_ENDPOINT}/events/${identifier.user_identifier}`)
           const events = await eventsResponse.json();
           const active = await events.find(obj => obj.active === true)
-          const response1 = await fetch(`${config.API_ENDPOINT}/program/${active.id}`)
-          const program = await response1.json();
-          const response2 = await fetch(`${config.API_ENDPOINT}/announcements/${active.id}`)
-          const announcements = await response2.json();
-          const response3 = await fetch(`${config.API_ENDPOINT}/contact/${active.id}`)
-          const contact = await response3.json();
+          const response1 = fetch(`${config.API_ENDPOINT}/program/${active.id}`)
+          const response2 = fetch(`${config.API_ENDPOINT}/announcements/${active.id}`)
+          const response3 = fetch(`${config.API_ENDPOINT}/contact/${active.id}`)
+          const multipleFetch = await Promise.all([response1, response2, response3])
+          const program = await multipleFetch[0].json();
+          const announcements = await multipleFetch[1].json();
+          const contact = await multipleFetch[2].json();
           setName(contact.church || '')
           setLink(contact.logo || '')
           setDate(active.event_date || '')
@@ -106,7 +106,6 @@ export default function Jubo() {
               'Offering': program.offering || '',
               'Benediction': program.benediction_desc || ''
           })
-          console.log(program)
           setAnnouncements(announcements || [''])
           setContact({
               Connect: contact.connect || '',
@@ -125,7 +124,9 @@ export default function Jubo() {
                 }
               ]
           })
+          setLoading(false)
       } catch (e) {
+          setError(true)
           console.log(e)
       }
     }
@@ -133,11 +134,11 @@ export default function Jubo() {
   },[jubo])
 
   useEffect(() => {
-    setPageWidth(aWrapperRef.current.offsetWidth)
+      setPageWidth(aWrapperRef.current.offsetWidth)
   },[pageWidth])
 
   const pages = [
-    <LogoPage name={name} logoLink={logoLink} date={date}/>,
+    <LogoPage name={name} logoLink={logoLink} date={date} />,
     <Program worshipOrder={worshipOrder} worshipDetails={worshipDetails}/>,
     <Announcements announcements={announcements}/>,
     <Connect contact={contact}/>
@@ -162,13 +163,19 @@ export default function Jubo() {
 
     return (
         <div id="boot">
-            {props.map(({ x, display, scale }, i) => (
-              <animated.div ref={aWrapperRef} className='pageContainer' {...bind()} key={i} style={{ display, x }}>
-                  <animated.div className='pages' style={{ scale }} >
-                      {pages[i]}
-                  </animated.div>
-              </animated.div>
-            ))}
+          {
+            props.map(({ x, display, scale }, i) => (
+                <animated.div ref={aWrapperRef} className='pageContainer' {...bind()} key={i} style={{ display, x }}>
+                    <animated.div className='pages' style={{ scale }} >
+                        {
+                          loading ? <Loading error={error}/> : 
+                          pages[i]
+                          // <Loading />
+                        }
+                    </animated.div>
+                </animated.div>
+            ))
+          }
         </div>
     )
 }

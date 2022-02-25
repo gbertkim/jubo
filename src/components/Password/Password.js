@@ -65,6 +65,7 @@ export default function Password(props) {
                             aria-label='Username input'
                             aria-required='true'
                             ref={userRef}
+                            data-testid='signUserId'
                         />
                     </div>
                     <div className='field logPasswordInput'>
@@ -78,6 +79,8 @@ export default function Password(props) {
                             aria-label='Password input'
                             aria-required='true'
                             ref={oldRef}
+                            data-testid='signPassId'
+
                         />
                     </div>
                     <div className='field logPasswordInput'>
@@ -91,6 +94,7 @@ export default function Password(props) {
                             aria-label='New Password input'
                             aria-required='true'
                             ref={passwordRef}
+                            data-testid='signPassCopyId'
                         />
                     </div>
                     <div className='field logPasswordInput'>

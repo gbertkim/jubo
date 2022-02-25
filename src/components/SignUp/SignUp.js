@@ -20,6 +20,9 @@ const SignUp = (props) => {
         if (user.length < 3 || user.length > 15) {
             return setError('Username must be between 3-15 characters')
         }
+        if (pass.length < 3 || pass.length > 15) {
+            return setError('Password must be between 3-15 characters')
+        }
         if (pass !== confPasswordRef.current.value) {
             return setError('Passwords do not match')
         }
@@ -71,6 +74,7 @@ const SignUp = (props) => {
                             aria-label='email-input'
                             aria-required='true'
                             ref={userRef}
+                            data-testid='signUserId'
                         />
                     </div>
                     <div className='field'>
@@ -84,6 +88,7 @@ const SignUp = (props) => {
                             aria-label='Password input'
                             aria-required='true'
                             ref={passwordRef}
+                            data-testid='signPassId'
                         />
                     </div>
                     <div className='field'>
@@ -97,9 +102,10 @@ const SignUp = (props) => {
                             aria-label='Password input'
                             aria-required='true'
                             ref={confPasswordRef}
+                            data-testid='signPassCopyId'
                         />
                     </div>
-                    {error && <div className='errorNote'>{error}</div>}
+                    {error && <div className='errorNote' data-testid='errorDiv'>{error}</div>}
                     <button type="submit" className="button">
                         Submit
                     </button>

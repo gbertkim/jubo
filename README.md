@@ -34,14 +34,13 @@ useSpring, useGesture
 
 Designed for mobile, users will scan a QR code before entering the church. Users will be noted to open a web app where they can see the worship order, add events to their calendars, save addresses to their google maps, and take note of the church's contact info. 
 
-
 ![Admin Page 1](./sample/sample2.png "Admin Page Log in and accounts page")
 
-When you first enter the app, you will either log in or create an account. Be mindful that your username will also be the hyperlink or name of your bulletin board. Open the navigation through the hamburger to either logout or access your account page. In the account page you may delete or account or change your password. 
+When you first enter the app, you will either log in or create an account. Be mindful that your username will also be the hyperlink or name of your bulletin board. Open the navigation through the hamburger to either logout or access your account page. In the account page you may delete your account or change your password. 
 
 ![Admin Page 2](./sample/sample3.png "Admin Page for editing the jubo")
 
-Create a bulletin for a specific date. After you create the bulletin, click "GO LIVE" if you'd like for it be active. Notice that the hyperlink to your bulletin is under "MY JUBOS". You may also copy, edit, rename, or delete the jubo as well. From their, update your bulletin contact by going into edit and updating the contents within
+Create a bulletin for a specific date. After you create the bulletin, click "GO LIVE" if you'd like for it be active. Notice that the hyperlink to your bulletin is under "MY JUBOS". You may also copy, edit, rename, or delete the jubo as well. From their, update your bulletin information by going into edit and updating the contents within.
 
 ![Responsive](./sample/sample4.png "Responsive example")
 

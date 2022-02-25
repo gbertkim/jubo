@@ -32,6 +32,7 @@ const Dashboard = () => {
                 const res =  await fetch(`${config.API_ENDPOINT}/events/${user_identifier}`)
                 if (!res.ok) throw await res.json()
                 const response = await res.json()
+                console.log(response)
                 eventSorter(response);
                 response.forEach(event => {
                     event.active && setEntryActive(event.event_name)
