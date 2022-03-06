@@ -4,6 +4,10 @@
 
 [https://jubo.vercel.app/](https://jubo.vercel.app/)
 
+Username: gilbear
+
+Pass: portfolio
+
 Server-side: 
 
 [https://github.com/gbertkim/jubo-api](https://github.com/gbertkim/jubo-api)
